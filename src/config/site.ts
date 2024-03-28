@@ -70,6 +70,32 @@ export const siteConfig = {
   },
  ],
 
+ socialLinks: [
+  {
+   title: 'Facebook',
+   href: '#',
+   icon: 'facebook',
+   colorCode: '#1877f2',
+  },
+  {
+   title: 'Instagram',
+   href: '#',
+   icon: 'instagram',
+   colorCode: '#F56040',
+  },
+  {
+   title: 'Linkedin',
+   href: '#',
+   icon: 'linkedin',
+   colorCode: '#0966c2',
+  },
+  {
+   title: 'Youtube',
+   href: '#',
+   icon: 'youtube',
+   colorCode: '#ff0100',
+  },
+ ],
 }
 
 export type SiteConfig = typeof siteConfig
