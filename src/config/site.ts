@@ -70,6 +70,26 @@ export const siteConfig = {
   },
  ],
 
+ footerItems: [
+  {
+   title: 'Useful Links',
+   children: [
+    {
+     title: 'About',
+     href: '/about',
+    },
+    {
+     title: 'Gallery',
+     href: '/gallery',
+    },
+    {
+     title: 'Contact Us',
+     href: '/contact',
+    },
+   ],
+  },
+ ],
+
  socialLinks: [
   {
    title: 'Facebook',
