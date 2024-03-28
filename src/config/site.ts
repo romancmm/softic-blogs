@@ -30,6 +30,46 @@ export const siteConfig = {
   metaDescription: `Blog App - using NextJs, TypeScript, React-redux, Antd & Shadcn UI`,
   metaKeywords: ``,
  },
+ mainNav: [
+  {
+   title: 'Home',
+   href: '/',
+  },
+  {
+   title: 'About Us',
+   href: '/about',
+  },
+
+  // Categories - Routes
+  {
+   title: 'Categories',
+   href: '/categories',
+   children: [
+    {
+     title: 'Sports',
+     href: '/sports',
+     // children: [{ title: 'About', href: '/about' }],
+    },
+    {
+     title: 'Entertainment',
+     href: '/entertainment',
+    },
+    {
+     title: 'Political',
+     href: '/political',
+    },
+   ],
+  },
+  {
+   title: 'Gallery',
+   href: '/gallery',
+  },
+  {
+   title: 'Contact Us',
+   href: '/contact',
+  },
+ ],
+
 }
 
 export type SiteConfig = typeof siteConfig
