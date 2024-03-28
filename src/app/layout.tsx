@@ -2,12 +2,13 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
+import { siteConfig } from "@/config/site";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Softic Blogs | NextJs blog app",
-  description: "Blog App - using NextJs, TypeScript, React-redux, Antd & Shadcn UI",
+  title: siteConfig?.seo?.metaTitle,
+  description: siteConfig?.seo?.metaDescription,
 };
 
 export default function RootLayout({
