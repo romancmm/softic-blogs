@@ -10,7 +10,7 @@ export const siteConfig = {
  copyright: `Copyright © ${new Date().getFullYear()} softicblogs.com. All rights reserved.`,
  favicon: '/favicon.ico',
  logo: {
-  default: '/logo.png',
+  default: '/images/logo.png',
   dark: '/logo-dark.png',
  },
  author: {
