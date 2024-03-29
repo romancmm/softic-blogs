@@ -1,10 +1,45 @@
-import { BannerBlogCard } from '@/components/common'
-import React from 'react'
+'use client'
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
 
-const BannerLeft = () => {
-    const data = [{}]
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+// import 'swiper/css/effect-cube';
+
+
+// import required modules
+import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+
+import { BannerBlogCard } from '@/components/common'
+
+const BannerLeft = ({ blogs }: any | any[]) => {
+
     return (
-        data?.map((data) => <BannerBlogCard data={data} />)
+        <div className="relative max-w-full overflow-hidden">
+            <Swiper
+                pagination={{
+                    dynamicBullets: true,
+                    // clickable: true,
+                }}
+                spaceBetween={10}
+                centeredSlides={true}
+                autoplay={{
+                    delay: 3500,
+                    disableOnInteraction: true,
+                }}
+                navigation={false}
+                modules={[Autoplay, Pagination, Navigation]}
+                className="mySwiper rounded-xl overflow-hidden"
+            >
+                {blogs?.map((data: any, i: React.Key) =>
+                    <SwiperSlide key={i}>
+                        <BannerBlogCard data={data} />
+                    </SwiperSlide>
+                )}
+            </Swiper>
+        </div>
     )
 }
 
