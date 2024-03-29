@@ -16,6 +16,10 @@ const sectionVariants = cva("w-full", {
             default: 'bg-background',
         }
     },
+    compoundVariants: [{
+        variant: "default",
+        bg: "default"
+    }],
     defaultVariants: {
         variant: "default",
         bg: "default"
