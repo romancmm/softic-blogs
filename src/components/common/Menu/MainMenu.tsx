@@ -25,7 +25,7 @@ export default function MainMenu({ items }: MainMenu) {
             <NavigationMenuList>
                 {items?.map((item: any, i: React.Key) => (
                     item?.children ?
-                        <NavigationMenuItem>
+                        <NavigationMenuItem key={i}>
                             <NavigationMenuTrigger>
                                 <span className="text-white">{item?.title}</span>
                             </NavigationMenuTrigger>
