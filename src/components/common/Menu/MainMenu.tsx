@@ -27,7 +27,7 @@ export default function MainMenu({ items }: MainMenu) {
                     item?.children ?
                         <NavigationMenuItem key={i}>
                             <NavigationMenuTrigger>
-                                <span className="text-white">{item?.title}</span>
+                                <span className="text-white dark:text-gray-700">{item?.title}</span>
                             </NavigationMenuTrigger>
                             <NavigationMenuContent>
                                 <ul className={cn(`w-[400px] p-4 md:w-[220px] lg:w-[250px]`, { ["grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]"]: item?.children?.length > 5 })}>
@@ -44,7 +44,7 @@ export default function MainMenu({ items }: MainMenu) {
                         : <NavigationMenuItem key={i}>
                             <Link href={item?.href} legacyBehavior passHref>
                                 <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                                    <span className="text-white">{item?.title}</span>
+                                    <span className="text-white dark:text-gray-700">{item?.title}</span>
                                 </NavigationMenuLink>
                             </Link>
                         </NavigationMenuItem>
