@@ -17,7 +17,7 @@ import { BannerBlogCard } from '@/components/common'
 const BannerLeft = ({ blogs }: any | any[]) => {
 
     return (
-        <div className="relative max-w-full overflow-hidden">
+        <div className="relative max-w-full overflow-hidden h-full">
             <Swiper
                 pagination={{
                     dynamicBullets: true,
@@ -31,7 +31,7 @@ const BannerLeft = ({ blogs }: any | any[]) => {
                 }}
                 navigation={false}
                 modules={[Autoplay, Pagination, Navigation]}
-                className="mySwiper rounded-xl overflow-hidden"
+                className="mySwiper rounded-xl overflow-hidden h-full"
             >
                 {blogs?.map((data: any, i: React.Key) =>
                     <SwiperSlide key={i}>
