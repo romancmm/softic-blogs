@@ -17,7 +17,7 @@ const containerVariants = cva("container", {
 
 export interface ContainerProps extends React.HTMLAttributes<HTMLDivElement>, VariantProps<typeof containerVariants> { }
 
-const Container = React.forwardRef<HTMLDivElement, ContainerProps>(
+const Container: React.FC<ContainerProps> = (
     ({ className, variant, ...props }) => {
         const Comp: React.ComponentType<React.HTMLAttributes<HTMLDivElement>> | any = "div"
         return (

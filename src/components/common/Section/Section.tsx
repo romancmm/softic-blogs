@@ -12,8 +12,8 @@ const sectionVariants = cva("w-full", {
         },
         bg: {
             light: 'bg-foreground',
-            dark: 'bg-muted',
-            default: 'bg-background',
+            dark: 'bg-background',
+            default: 'bg-muted',
         }
     },
     compoundVariants: [{
@@ -28,12 +28,12 @@ const sectionVariants = cva("w-full", {
 
 export interface SectionProps extends React.HTMLAttributes<HTMLDivElement>, VariantProps<typeof sectionVariants> { }
 
-const Section = React.forwardRef<HTMLDivElement, SectionProps>(
-    ({ className, variant, ...props }) => {
+const Section: React.FC<SectionProps> = (
+    ({ className, variant, bg, ...props }) => {
         const Comp: React.ComponentType<React.HTMLAttributes<HTMLDivElement>> | any = "section"
         return (
             <Comp
-                className={cn(sectionVariants({ variant, className }))}
+                className={cn(sectionVariants({ variant, bg, className }))}
                 {...props}
             />
         )
