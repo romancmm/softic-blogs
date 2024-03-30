@@ -6,7 +6,7 @@ const ContentLeft = ({ blogs }: any | any[]) => {
     return (
         <div className="grid grid-cols-2 gap-4">
             {blogs?.map((data: any, i: React.Key) =>
-                <BlogCard data={data} />
+                <BlogCard key={i} data={data} />
             )}
         </div>
     )
