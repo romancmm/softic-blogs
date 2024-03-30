@@ -17,7 +17,6 @@ async function MainContent() {
                     <div className="col-span-1 flex justify-start flex-col text-gray-700 border border-gray-100 rounded-lg p-6 sticky top-28 shadow bg-foreground">
                         {/* <BannerRight blogs={data} /> */}
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Est vero iusto dolores, obcaecati doloremque ad consequatur repudiandae voluptates adipisci maiores facere earum error, beatae harum a, deleniti delectus esse accusantium.
-
                     </div>
                 </div>
             </Container>
