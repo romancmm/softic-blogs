@@ -3,7 +3,7 @@ import { BlogCard, HorizontalCard } from '@/components/common'
 import { useEffect } from "react";
 import { useGetPostsQuery } from '@/store/apiSlices';
 import { setPosts, setLoading, setError } from '@/store/postsSlice';
-import { Loader } from "@/components/common";
+import { LoaderTwo } from "@/components/common";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 
 const ContentLeft = () => {
@@ -24,7 +24,7 @@ const ContentLeft = () => {
 
     const { posts: loadedPosts, loading, error: postsError } = useAppSelector((state) => state.posts);
 
-    if (loading || isLoading) return <Loader />
+    if (loading || isLoading) return <LoaderTwo />
     if (postsError || error) return <div>Error: {postsError || error}</div>
 
     return (
