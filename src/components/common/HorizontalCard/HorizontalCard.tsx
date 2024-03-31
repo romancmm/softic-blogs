@@ -12,14 +12,14 @@ const HorizontalCard: React.FC<HorizontalCardProps> = ({ data }) => {
     return (
         <Card hoverable size='small' className='h-full'>
             <div
-                className="flex items-center justify-start gap-4 border-gray-200 border-spacing-6 border-separate border-dashed last:border-none group"
+                className="flex items-center justify-start gap-4"
             >
-                <div className="w-1/3 h-20 bg-slate-50 overflow-hidden rounded">
+                <div className="w-1/3 h-24 bg-slate-50 overflow-hidden rounded">
                     <Image
                         src={data?.image?.thumbnailUrl}
                         alt={data?.title}
-                        height={100}
-                        width={150}
+                        height={120}
+                        width={220}
                         className='object-cover h-full group-hover:scale-125 transition-500ms duration-500 delay-500 ease-in-out'
                     />
                 </div>
