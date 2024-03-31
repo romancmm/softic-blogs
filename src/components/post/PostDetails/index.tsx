@@ -42,12 +42,12 @@ export default function PostDetails({ data }: PostDetailsProps) {
             </div>
 
             <div className="py-6">
-                <h2 className="text-xl md:text-3xl font-bold capitalize mb-2">{mergedData?.title}</h2>
-                <p className='capitalize leading-normal'>{mergedData?.body}</p>
+                <h2 className="text-xl md:text-2xl font-extrabold uppercase mb-2">{mergedData?.title}</h2>
+                <p className='capitalize leading-loose font-light'>{mergedData?.body}</p>
             </div>
 
             <div className="pt-4 border-t border-dashed border-gray-200">
-                <h2 className="text-xl md:text-2xl font-bold capitalize mb-3">Comments</h2>
+                <h2 className="text-lg md:text-2xl font-semibold capitalize mb-3">Comments</h2>
 
                 <div className="flex flex-col gap-4">
                     {mergedData?.comments?.map((data: Comment, i: React.Key) =>
