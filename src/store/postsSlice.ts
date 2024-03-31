@@ -32,7 +32,7 @@ const postsSlice = createSlice({
   },
   deletePost(state: any, action) {
    const postId = action.payload
-   state.data = state.posts?.filter((post: Post) => post.id !== postId)
+   state.posts = state.posts?.filter((post: Post) => post.id !== postId)
   },
  },
 })

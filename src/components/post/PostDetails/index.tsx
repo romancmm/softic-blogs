@@ -43,7 +43,7 @@ export default function PostDetails({ data }: PostDetailsProps) {
 
             <div className="py-6">
                 <h2 className="text-xl md:text-2xl font-extrabold uppercase mb-2">{mergedData?.title}</h2>
-                <p className='capitalize leading-loose font-light'>{mergedData?.body}</p>
+                <p className='capitalize leading-relaxed font-light'>{mergedData?.body}</p>
             </div>
 
             <div className="pt-4 border-t border-dashed border-gray-200">

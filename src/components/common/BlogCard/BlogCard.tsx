@@ -18,11 +18,8 @@ const BlogCard: React.FC<BlogCardProps> = ({ data }) => {
     };
 
     return (
-        <Card
-            hoverable
-            className='h-full'
-        >
-            <div key={data?.id} className="group flex flex-col gap-5">
+        <Card hoverable className='h-full relative overflow-hidden group'>
+            <div key={data?.id} className="flex flex-col gap-5">
                 <div className="w-full aspect-video overflow-hidden rounded-md z-0">
                     <Image
                         src={data?.image?.url}
@@ -49,7 +46,10 @@ const BlogCard: React.FC<BlogCardProps> = ({ data }) => {
                     <p className='font-normal text-sm text-gray-600 leading-relaxed capitalize line-clamp-4'>{data?.body}</p>
                 </div>
 
-                {/* <Button onClick={() => handleDeletePost(data?.id)}>Delete</Button> */}
+
+            </div>
+            <div className="h-1/3 p-4 w-full absolute left-0 -bottom-full group-hover:bottom-4 bg-white bg-opacity-5 backdrop-blur-sm transition-500ms duration-500 delay-500 ease-in-out rounded-b-lg flex items-center justify-center">
+                <Button onClick={() => handleDeletePost(data?.id)} danger size='large' type='primary'>Delete</Button>
             </div>
         </Card >
     )
