@@ -36,38 +36,34 @@ export const siteConfig = {
    href: '/',
   },
   {
-   title: 'About Us',
-   href: '/about',
+   title: 'Sports',
+   href: '/posts',
+  },
+  {
+   title: 'Lifestyle',
+   href: '/posts',
+  },
+  {
+   title: 'Politic',
+   href: '/posts',
+  },
+  {
+   title: 'Trending',
+   href: '/posts',
   },
 
   // Categories - Routes
-  {
-   title: 'Categories',
-   href: '/categories',
-   children: [
-    {
-     title: 'Sports',
-     href: '/sports',
-     // children: [{ title: 'About', href: '/about' }],
-    },
-    {
-     title: 'Entertainment',
-     href: '/entertainment',
-    },
-    {
-     title: 'Political',
-     href: '/political',
-    },
-   ],
-  },
-  {
-   title: 'Gallery',
-   href: '/gallery',
-  },
-  {
-   title: 'Contact Us',
-   href: '/contact',
-  },
+  //   {
+  //    title: 'Categories',
+  //    href: '/categories',
+  //    children: [
+  //     {
+  //      title: 'Sports',
+  //      href: '/sports',
+  //      children: [{ title: 'sub 1', href: '/sub-1' }],
+  //     },
+  //    ],
+  //   },
  ],
 
  footerItems: [
