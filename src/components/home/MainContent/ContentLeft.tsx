@@ -37,8 +37,9 @@ const ContentLeft = () => {
 
     if (isLoading || loading) return <LoaderTwo />;
     if (error || postsError) return <div>Error: {postsError}</div>;
+
     return (
-        <div className="grid grid-cols-2 grid-rows-4 flex-wrap gap-4">
+        <div className="grid grid-cols-none md:grid-cols-2 grid-rows-4 gap-2 md:gap-4">
             {loadedPosts?.map((data: any, i: number) =>
                 data?.id % 5 === 0
                     ? <div className="row-span-3" key={i}>
