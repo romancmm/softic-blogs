@@ -1,5 +1,5 @@
 'use client'
-import { Container, LoaderTwo, Section } from '@/components/common'
+import { Container, Section } from '@/components/common'
 import React, { useEffect, useMemo } from 'react'
 import { setPosts, setLoading, setError, mergeData } from '@/store/postsSlice';
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
@@ -36,8 +36,8 @@ export default function BlogPage() {
 
     const { posts: loadedPosts, loading, error: postsError } = useAppSelector((state) => state.posts);
 
-    if (isLoading || loading) return <LoaderTwo />;
-    if (error || postsError) return <div>Error: {postsError}</div>;
+    // if (isLoading || loading) return <LoaderTwo />;
+    if (error || postsError) return console.log("Error:", postsError);
 
     return (
         <>
@@ -45,7 +45,7 @@ export default function BlogPage() {
                 <Container>
                     <div className="grid grid-cols-3 items-start gap-2 md:gap-6">
                         <div className="col-span-full md:col-span-2 relative ">
-                            <ContentLeft items={loadedPosts} />
+                            <ContentLeft items={loadedPosts} isLoading={isLoading || loading} />
                         </div>
                         <div className="col-span-full md:col-span-1 flex justify-start flex-col text-gray-700 border border-gray-100 rounded-lg p-6 sticky top-28 shadow bg-foreground">
                             {/* <BannerRight blogs={data} /> */}

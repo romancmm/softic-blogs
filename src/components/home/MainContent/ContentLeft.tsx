@@ -1,12 +1,12 @@
 'use client'
 import { BlogCard, HorizontalCard, LoaderTwo } from '@/components/common'
 interface ContentLeftProps {
-    items: any[]
+    items: any[],
+    isLoading: boolean
 }
 
-const ContentLeft: React.FC<ContentLeftProps> = ({ items }) => {
-
-
+const ContentLeft: React.FC<ContentLeftProps> = ({ items, isLoading }) => {
+    if (isLoading) return <LoaderTwo />
     return (
         <div className="grid grid-cols-none md:grid-cols-2 grid-rows-4 gap-2 md:gap-4">
             {items?.map((data: any, i: number) =>
