@@ -1,4 +1,4 @@
-import { Card } from 'antd'
+import { Avatar, Card } from 'antd'
 import { MessageCircleMore, User } from 'lucide-react'
 import Image from 'next/image'
 import React from 'react'
@@ -25,10 +25,10 @@ const BlogCard: React.FC<BlogCardProps> = ({ data }) => {
                 </div>
                 <div className="flex justify-between items-center gap-4 pb-2 border-b border-dashed border-gray-200 text-gray-600">
                     <span className='flex items-center gap-1'>
-                        <MessageCircleMore size={16} /> <span>{data?.numberOfComments} comments</span>
+                        <Avatar src={data?.user?.profilePicture} /> <span>{data?.user?.name}</span>
                     </span>
                     <span className='flex items-center gap-1'>
-                        <User size={16} /> <span>{data?.user}</span>
+                        <MessageCircleMore size={16} /> <span>{data?.numberOfComments} comments</span>
                     </span>
                 </div>
                 <div className="flex flex-col gap-2">

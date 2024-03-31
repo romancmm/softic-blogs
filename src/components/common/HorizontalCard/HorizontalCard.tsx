@@ -32,7 +32,7 @@ const HorizontalCard: React.FC<HorizontalCardProps> = ({ data }) => {
                             <MessageCircleMore size={14} /> <span>{data?.numberOfComments}</span>
                         </span>
                         <span className='flex items-center gap-1'>
-                            <User size={14} /> <span>{data?.user}</span>
+                            <User size={14} /> <span>{data?.user?.name}</span>
                         </span>
                     </div>
                 </div>

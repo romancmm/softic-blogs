@@ -46,10 +46,15 @@ export const mergeData = (
   ...post,
   numberOfComments: comments.filter((comment) => comment.postId === post.id)
    ?.length,
-  user: users.find((user) => user.id === post.userId)?.name,
+  user: {
+   name: users.find((user) => user.id === post.userId)?.name,
+   profilePicture: photos.find((photo) => photo.albumId === post.userId)
+    ?.thumbnailUrl,
+  },
   image: {
-   url: photos.find((photo) => photo.id === post.id)?.url,
-   thumbnailUrl: photos.find((photo) => photo.id === post.id)?.thumbnailUrl,
+   url: photos.find((photo) => photo.albumId === post.id)?.url,
+   thumbnailUrl: photos.find((photo) => photo.albumId === post.id)
+    ?.thumbnailUrl,
   },
  }))
 }

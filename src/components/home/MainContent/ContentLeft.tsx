@@ -15,7 +15,7 @@ const ContentLeft = () => {
 
     const mergedPosts = useMemo(() => {
         if (posts && comments && users && photos) {
-            return mergeData(posts, comments, users, photos).slice(0, 20);
+            return mergeData(posts, comments, users, photos).slice(10, 30);
         }
         return [];
     }, [posts, comments, users, photos]);
