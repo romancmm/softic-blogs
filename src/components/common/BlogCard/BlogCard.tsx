@@ -12,13 +12,13 @@ const BlogCard: React.FC<BlogCardProps> = ({ data }) => {
             hoverable
         >
             <div key={data?.id} className="group flex flex-col gap-5">
-                <div className="w-full overflow-hidden rounded-md z-0">
+                <div className="w-full aspect-video overflow-hidden rounded-md z-0">
                     <Image
-                        src={'/images/bg.jpeg'}
-                        alt=''
+                        src={data?.image}
+                        alt={data?.title}
                         height={300}
                         width={500}
-                        className='object-cover group-hover:scale-110 transition-500ms duration-500 delay-500 ease-in-out'
+                        className='object-cover w-full group-hover:scale-110 transition-500ms duration-500 delay-500 ease-in-out'
                     />
                 </div>
                 <div className="flex flex-col gap-2">

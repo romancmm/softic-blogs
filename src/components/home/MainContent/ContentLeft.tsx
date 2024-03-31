@@ -63,7 +63,7 @@ export const mergeData = (
         ...post,
         numberOfComments: comments.filter((comment) => comment.postId === post.id)?.length,
         user: users.find((user) => user.id === post.userId)?.name,
-        photo: photos.find((photo) => photo.id === post.id)?.url,
+        image: photos.find((photo) => photo.id === post.id)?.url,
     }))
 }
 
