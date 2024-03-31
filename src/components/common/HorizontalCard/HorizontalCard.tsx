@@ -15,7 +15,7 @@ const HorizontalCard: React.FC<HorizontalCardProps> = ({ data }) => {
             >
                 <div className="w-1/3 h-20 bg-slate-50 overflow-hidden rounded">
                     <Image
-                        src={data?.image}
+                        src={data?.image?.thumbnailUrl}
                         alt={data?.title}
                         height={100}
                         width={150}

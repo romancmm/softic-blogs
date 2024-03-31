@@ -14,7 +14,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ data }) => {
             <div key={data?.id} className="group flex flex-col gap-5">
                 <div className="w-full aspect-video overflow-hidden rounded-md z-0">
                     <Image
-                        src={data?.image}
+                        src={data?.image?.url}
                         alt={data?.title}
                         height={300}
                         width={500}
