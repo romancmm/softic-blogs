@@ -18,7 +18,7 @@ const CommentCard: React.FC<CommentCardProps> = ({ data }) => {
                 <div className="flex items-center justify-start gap-4 w-full">
                     <div className="w-auto min-w-min">
                         <Avatar
-                            src={data?.name}
+                            src={data?.profilePicture}
                             alt={data?.name}
                             size={65}
                         />

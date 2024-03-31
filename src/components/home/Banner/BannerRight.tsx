@@ -6,6 +6,7 @@ import moment from 'moment'
 import Image from 'next/image'
 import { useEffect, useMemo } from 'react';
 import { setPosts, setLoading, setError, mergeData } from '@/store/postsSlice';
+import Link from "next/link";
 
 const BannerRight = () => {
     const dispatch = useAppDispatch();
@@ -50,7 +51,9 @@ const BannerRight = () => {
                         <Image src={data?.image?.thumbnailUrl} alt={data?.title} height={75} width={100} className='object-cover h-full group-hover:scale-125 transition-500ms duration-500 delay-500 ease-in-out' />
                     </div>
                     <div className="w-2/3">
-                        <h4 className='leading-tight text-sm text-muted font-semibold capitalize'>{data?.title}</h4>
+                        <Link href={`/posts/${data?.id}`}>
+                            <h4 className='leading-tight text-sm text-muted font-semibold capitalize'>{data?.title}</h4>
+                        </Link>
                         <span className=' text-xs text-gray-600 font-light'>{moment(data?.createdAt).format('ll')}</span>
                     </div>
                 </div>

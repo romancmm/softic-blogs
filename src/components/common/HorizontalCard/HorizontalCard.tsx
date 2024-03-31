@@ -2,6 +2,7 @@ import { Card } from 'antd'
 import { MessageCircleMore, User } from 'lucide-react'
 import moment from 'moment'
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 interface HorizontalCardProps {
@@ -24,7 +25,12 @@ const HorizontalCard: React.FC<HorizontalCardProps> = ({ data }) => {
                     />
                 </div>
                 <div className="w-2/3">
-                    <h4 className='leading-tight text-sm text-muted font-semibold capitalize line-clamp-2'>{data?.title}</h4>
+
+                    <Link href={`/posts/${data?.id}`}>
+                        <h4 className='leading-tight text-sm text-muted font-semibold capitalize line-clamp-2'>
+                            {data?.title}
+                        </h4>
+                    </Link>
                     <span className=' text-xs text-gray-600 font-light'>{moment(data?.createdAt).format('ll')}</span>
 
                     <div className="flex justify-start items-center gap-4 mt-1 text-gray-500 text-xs">
@@ -37,7 +43,7 @@ const HorizontalCard: React.FC<HorizontalCardProps> = ({ data }) => {
                     </div>
                 </div>
             </div>
-        </Card>
+        </Card >
     )
 }
 

@@ -27,7 +27,7 @@ export default function PostDetails({ data }: PostDetailsProps) {
 
     return (
         <div className='flex flex-col gap-6'>
-            <Image src={mergedData?.image?.url} alt={mergedData?.title} height={300} width={500} className='hover:scale-125 transition-500ms duration-500 delay-500 ease-in-out max-w-full aspect-video rounded-md' />
+            <Image src={mergedData?.image?.url} alt={mergedData?.title} height={400} width={600} className='hover:scale-105 transition-500ms duration-500 delay-500 ease-in-out max-w-full aspect-video rounded-md' />
 
             <div className="flex justify-start items-center gap-6 pb-2 border-b border-dashed border-gray-200 text-gray-600 text-sm">
                 <span className='flex items-center gap-1'>

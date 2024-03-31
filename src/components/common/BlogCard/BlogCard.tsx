@@ -1,6 +1,7 @@
 import { Avatar, Card } from 'antd'
 import { MessageCircleMore } from 'lucide-react'
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 interface BlogCardProps {
@@ -32,11 +33,15 @@ const BlogCard: React.FC<BlogCardProps> = ({ data }) => {
                     </span>
                 </div>
                 <div className="flex flex-col gap-2">
-                    <h2 className='text-lg font-semibold text-muted leading-snug capitalize line-clamp-1'>{data?.title}</h2>
+                    <Link href={`/posts/${data?.id}`}>
+                        <h2 className='text-lg font-semibold text-muted leading-snug capitalize line-clamp-1'>
+                            {data?.title}
+                        </h2>
+                    </Link>
                     <p className='font-normal text-sm text-gray-600 leading-relaxed capitalize line-clamp-4'>{data?.body}</p>
                 </div>
             </div>
-        </Card>
+        </Card >
     )
 }
 
