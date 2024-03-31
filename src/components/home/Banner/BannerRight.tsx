@@ -7,7 +7,7 @@ import Image from 'next/image'
 import { useEffect, useMemo } from 'react';
 import { setPosts, setLoading, setError, mergeData } from '@/store/postsSlice';
 
-const BannerRight = ({ blogs }: any | any[]) => {
+const BannerRight = () => {
     const dispatch = useAppDispatch();
     const { data: posts, isLoading, error } = useGetPostsQuery();
     const { data: comments } = useGetCommentsQuery();

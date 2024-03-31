@@ -9,7 +9,7 @@ async function MainContent() {
     return (
         <Section variant={"default"} bg={"light"}>
             <Container>
-                <div className="grid grid-cols-none md:grid-cols-3 items-start gap-2 md:gap-6">
+                <div className="grid grid-cols-3 items-start gap-2 md:gap-6">
                     <div className="col-span-full md:col-span-2 relative ">
                         <ContentLeft />
                     </div>

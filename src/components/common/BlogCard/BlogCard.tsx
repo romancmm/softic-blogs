@@ -1,5 +1,5 @@
 import { Avatar, Card } from 'antd'
-import { MessageCircleMore, User } from 'lucide-react'
+import { MessageCircleMore } from 'lucide-react'
 import Image from 'next/image'
 import React from 'react'
 
