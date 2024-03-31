@@ -1,13 +1,12 @@
 'use client'
-import { Container, Section } from '@/components/common'
 import React, { useEffect, useMemo } from "react";
 import { setPosts, setLoading, setError, mergeData } from '@/store/postsSlice';
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { useGetCommentsQuery, useGetPhotosQuery, useGetPostsQuery, useGetUsersQuery } from '@/store/apiSlices';
 import ContentLeft from './ContentLeft';
+import { Container, Section } from '@/components/common';
 
-
-function MainContent() {
+const MainContent = () => {
     const dispatch = useAppDispatch();
     const { data: posts, isLoading, error } = useGetPostsQuery();
     const { data: comments } = useGetCommentsQuery();
@@ -36,8 +35,10 @@ function MainContent() {
 
     const { posts: loadedPosts, loading, error: postsError } = useAppSelector((state) => state.posts);
 
-    // if (isLoading || loading) return <LoaderTwo />;
-    if (error || postsError) return console.log("Error:", postsError); // <div>Error: {postsError}</div>;
+    if (error || postsError) {
+        console.log("Error:", postsError);
+        return null; // Return null or an error component here
+    }
 
     return (
         <Section variant={"default"} bg={"light"}>
@@ -56,4 +57,4 @@ function MainContent() {
     )
 }
 
-export default MainContent
+export default MainContent;

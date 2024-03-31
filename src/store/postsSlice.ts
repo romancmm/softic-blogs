@@ -30,10 +30,14 @@ const postsSlice = createSlice({
    state.loading = false
    state.error = action.payload
   },
+  deletePost(state: any, action) {
+   const postId = action.payload
+   state.data = state.posts?.filter((post: Post) => post.id !== postId)
+  },
  },
 })
 
-export const { setPosts, setLoading, setError } = postsSlice.actions
+export const { setPosts, setLoading, setError, deletePost } = postsSlice.actions
 
 // Helper function to merge data on IDs
 export const mergeData = (
@@ -44,7 +48,7 @@ export const mergeData = (
 ) => {
  return posts.map((post) => ({
   ...post,
-  numberOfComments: comments.filter((comment) => comment.postId === post.id)
+  numberOfComments: comments?.filter((comment) => comment.postId === post.id)
    ?.length,
   user: {
    name: users.find((user) => user.id === post.userId)?.name,

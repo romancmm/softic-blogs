@@ -1,14 +1,22 @@
-import { Avatar, Card } from 'antd'
+'use client'
+import { deletePost } from '@/store/postsSlice'
+import { Avatar, Button, Card } from 'antd'
 import { MessageCircleMore } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
+import { useDispatch } from 'react-redux'
 
 interface BlogCardProps {
     data: any
 }
 
 const BlogCard: React.FC<BlogCardProps> = ({ data }) => {
+    const dispatch = useDispatch();
+
+    const handleDeletePost = (postId: string) => {
+        dispatch(deletePost(postId));
+    };
+
     return (
         <Card
             hoverable
@@ -40,6 +48,8 @@ const BlogCard: React.FC<BlogCardProps> = ({ data }) => {
                     </Link>
                     <p className='font-normal text-sm text-gray-600 leading-relaxed capitalize line-clamp-4'>{data?.body}</p>
                 </div>
+
+                {/* <Button onClick={() => handleDeletePost(data?.id)}>Delete</Button> */}
             </div>
         </Card >
     )
