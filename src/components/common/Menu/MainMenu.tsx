@@ -1,5 +1,3 @@
-"use client"
-
 import * as React from "react"
 import Link from "next/link"
 
@@ -15,11 +13,11 @@ import {
     navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
 
-interface MainMenu {
+interface MainMenuProps {
     items: any[]
 }
 
-export default function MainMenu({ items }: MainMenu) {
+export default function MainMenu({ items }: MainMenuProps) {
     return (
         <NavigationMenu>
             <NavigationMenuList>

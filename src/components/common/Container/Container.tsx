@@ -7,7 +7,7 @@ const containerVariants = cva("container", {
     variants: {
         variant: {
             default: "max-w-6xl",
-            fluid: "max-w-full",
+            fluid: "max-w-full px-3 md:px-9",
         },
     },
     defaultVariants: {
