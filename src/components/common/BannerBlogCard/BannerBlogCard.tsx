@@ -21,9 +21,9 @@ const BannerBlogCard: React.FC<BannerBlogCardProps> = ({ data }) => {
                     className='block mx-auto h-full object-cover min-h-20 group-hover:scale-110 transition-500ms duration-500 delay-500 ease-in-out'
                 />
             </div>
-            <div className="absolute bottom-2 group-hover:bottom-6 transform-cpu duration-500 delay-500 ease-in-out z-10 p-6 flex flex-col gap-2">
-                <h2 className='text-xl font-bold drop-shadow-lg leading-tight capitalize'>{data?.title}</h2>
-                <p className='font-light text-sm'>{data?.body}</p>
+            <div className="absolute bottom-2 group-hover:bottom-6 transform-cpu duration-500 delay-500 ease-in-out z-10 p-2 md:p-6 flex flex-col gap-2">
+                <h2 className='text-lg md:text-xl font-bold drop-shadow-lg leading-tight capitalize line-clamp-2'>{data?.title}</h2>
+                <p className='font-light text-xs md:text-sm line-clamp-4'>{data?.body}</p>
             </div>
         </div>
     )

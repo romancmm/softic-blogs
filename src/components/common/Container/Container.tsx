@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils"
 const containerVariants = cva("container", {
     variants: {
         variant: {
-            default: "max-w-6xl",
+            default: "max-w-6xl px-4 md:px-auto",
             fluid: "max-w-full px-3 md:px-9",
         },
     },

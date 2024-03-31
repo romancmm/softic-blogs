@@ -6,9 +6,9 @@ import { cn } from "@/lib/utils"
 const sectionVariants = cva("w-full", {
     variants: {
         variant: {
-            default: "py-16 md:py-22",
-            tight: "py-10 md:py-26",
-            relaxed: "py-20 md:py-24",
+            default: "py-12 md:py-16",
+            tight: "py-4 md:py-8",
+            relaxed: "py-16 md:py-20",
         },
         bg: {
             light: 'bg-foreground',

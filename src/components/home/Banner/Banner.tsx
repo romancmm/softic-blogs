@@ -11,11 +11,11 @@ async function MainBanner() {
     return (
         <Section variant={"tight"} bg={"light"}>
             <Container>
-                <div className="grid grid-cols-3 gap-6">
-                    <div className="col-span-2 relative ">
+                <div className="grid grid-cols-none md:grid-cols-3 gap-6">
+                    <div className="col-span-full md:col-span-2 relative overflow-hidden max-w-full">
                         <BannerLeft blogs={data} />
                     </div>
-                    <div className="col-span-1 flex justify-center items-center flex-col relative ">
+                    <div className="col-span-full md:col-span-1 flex justify-center items-center flex-col relative ">
                         <BannerRight blogs={data} />
                     </div>
 
