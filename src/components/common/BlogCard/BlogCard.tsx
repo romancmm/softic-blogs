@@ -1,4 +1,5 @@
 import { Card } from 'antd'
+import { MessageCircleMore, User } from 'lucide-react'
 import Image from 'next/image'
 import React from 'react'
 
@@ -22,8 +23,17 @@ const BlogCard: React.FC<BlogCardProps> = ({ data }) => {
                     />
                 </div>
                 <div className="flex flex-col gap-2">
-                    <h2 className='text-lg font-semibold text-muted leading-snug capitalize'>{data?.title}</h2>
-                    <p className='font-normal text-sm text-gray-600 leading-relaxed capitalize'>{data?.body}</p>
+                    <h2 className='text-lg font-semibold text-muted leading-snug capitalize line-clamp-1'>{data?.title}</h2>
+                    <p className='font-normal text-sm text-gray-600 leading-relaxed capitalize line-clamp-3'>{data?.body}</p>
+
+                    <div className="flex justify-between items-center gap-4 pt-2 border-t border-dashed border-gray-200 text-gray-500">
+                        <span className='flex items-center gap-1'>
+                            <MessageCircleMore size={16} /> <span>{data?.numberOfComments} comments</span>
+                        </span>
+                        <span className='flex items-center gap-1'>
+                            <User size={16} /> <span>{data?.user}</span>
+                        </span>
+                    </div>
                 </div>
             </div>
         </Card>
