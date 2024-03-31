@@ -4,9 +4,10 @@ import React from 'react'
 import BannerLeft from './BannerLeft'
 import useGetData from '@/lib/hooks/useGetData'
 import BannerRight from './BannerRight'
+import { PostwithProperty } from '@/types'
 
 async function MainBanner() {
-    const data: any = await useGetData('/posts')
+    const data: PostwithProperty[] = await useGetData('/posts')
 
     return (
         <Section variant={"tight"} bg={"light"}>
@@ -18,7 +19,6 @@ async function MainBanner() {
                     <div className="col-span-full md:col-span-1 flex justify-center items-center flex-col relative ">
                         <BannerRight />
                     </div>
-
                 </div>
             </Container>
         </Section>

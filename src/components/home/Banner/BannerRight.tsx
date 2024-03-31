@@ -7,6 +7,7 @@ import Image from 'next/image'
 import { useEffect, useMemo } from 'react';
 import { setPosts, setLoading, setError, mergeData } from '@/store/postsSlice';
 import Link from "next/link";
+import { PostwithProperty } from "@/types";
 
 const BannerRight = () => {
     const dispatch = useAppDispatch();
@@ -42,7 +43,7 @@ const BannerRight = () => {
 
     return (
         <div className="flex flex-col gap-1 border border-gray-200 p-4 rounded-xl w-full h-full">
-            {loadedPosts?.slice(5, 10)?.map((data: any, i: React.Key) =>
+            {loadedPosts?.slice(5, 10)?.map((data: PostwithProperty, i: React.Key) =>
                 <div
                     key={i}
                     className="flex items-start justify-start gap-4 py-1.5 border-b border-gray-200 border-spacing-6 border-separate border-dashed last:border-none last:pb-0 group"

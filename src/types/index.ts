@@ -52,3 +52,15 @@ export interface Photo {
  url: string
  thumbnailUrl: string
 }
+
+export interface PostwithProperty {
+ id: string | number | any
+ userId: number
+ title: string
+ body: string
+ user: User
+ comment: Comment[]
+ numberOfComments: number
+ image: Photo
+ createdAt: string
+}

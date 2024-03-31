@@ -13,6 +13,7 @@ import 'swiper/css/navigation';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 
 import { BannerBlogCard } from '@/components/common'
+import { PostwithProperty } from '@/types';
 
 const BannerLeft = ({ blogs }: any | any[]) => {
 
@@ -33,7 +34,7 @@ const BannerLeft = ({ blogs }: any | any[]) => {
                 modules={[Autoplay, Pagination, Navigation]}
                 className="mySwiper rounded-xl overflow-hidden h-full"
             >
-                {blogs?.map((data: any, i: React.Key) =>
+                {blogs?.map((data: PostwithProperty, i: React.Key) =>
                     <SwiperSlide key={i}>
                         <BannerBlogCard data={data} />
                     </SwiperSlide>
