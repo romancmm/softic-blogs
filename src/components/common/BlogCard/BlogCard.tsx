@@ -1,11 +1,13 @@
 'use client'
 import Icon from '@/components/icons'
 import { deletePost } from '@/store/postsSlice'
-import { Avatar, Button, Card } from 'antd'
+import { Avatar, Button, Card, Modal } from 'antd'
+import { ExclamationCircleFilled } from '@ant-design/icons';
 import { MessageCircleMore } from 'lucide-react'
+import { useDispatch } from 'react-redux'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useDispatch } from 'react-redux'
+const { confirm } = Modal;
 
 interface BlogCardProps {
     data: any
@@ -17,6 +19,22 @@ const BlogCard: React.FC<BlogCardProps> = ({ data }) => {
     const handleDeletePost = (postId: string) => {
         dispatch(deletePost(postId));
     };
+
+    const showConfirm = () => {
+        confirm({
+            title: 'Delete Post!',
+            icon: <ExclamationCircleFilled />,
+            content: 'Do you Want to delete these items?',
+            okText: 'Delete',
+            okType: 'danger',
+            okButtonProps: { type: "primary" },
+            onOk() {
+                () => handleDeletePost(data?.id)
+            },
+        });
+    };
+
+
 
     return (
         <Card hoverable className='h-full relative overflow-hidden group'>
@@ -53,7 +71,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ data }) => {
                     danger
                     size='middle'
                     type='primary'
-                    onClick={() => handleDeletePost(data?.id)}
+                    onClick={showConfirm}
                 >
                     <Icon name='trash' size={20} />
                 </Button>

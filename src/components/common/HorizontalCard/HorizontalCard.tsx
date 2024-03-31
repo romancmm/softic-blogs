@@ -1,13 +1,15 @@
 import Icon from '@/components/icons'
 import { useAppDispatch } from '@/store/hooks'
 import { deletePost } from '@/store/postsSlice'
-import { Button, Card } from 'antd'
+import { Button, Card, Modal } from 'antd'
+import modal from 'antd/es/modal'
 import { MessageCircleMore, User } from 'lucide-react'
+import { ExclamationCircleFilled } from '@ant-design/icons';
 import moment from 'moment'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
-
+const { confirm } = Modal;
 interface HorizontalCardProps {
     data: any
 }
@@ -17,6 +19,20 @@ const HorizontalCard: React.FC<HorizontalCardProps> = ({ data }) => {
 
     const handleDeletePost = (postId: string) => {
         dispatch(deletePost(postId));
+    };
+
+    const showConfirm = () => {
+        confirm({
+            title: 'Delete Post!',
+            icon: <ExclamationCircleFilled />,
+            content: 'Do you Want to delete these items?',
+            okText: 'Delete',
+            okType: 'danger',
+            okButtonProps: { type: "primary" },
+            onOk() {
+                () => handleDeletePost(data?.id)
+            },
+        });
     };
 
     return (
@@ -58,7 +74,7 @@ const HorizontalCard: React.FC<HorizontalCardProps> = ({ data }) => {
                     danger
                     size='middle'
                     type='primary'
-                    onClick={() => handleDeletePost(data?.id)}
+                    onClick={showConfirm}
                 >
                     <Icon name='trash' size={16} />
                 </Button>
