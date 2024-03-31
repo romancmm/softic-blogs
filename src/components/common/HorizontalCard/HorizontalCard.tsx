@@ -1,4 +1,7 @@
-import { Card } from 'antd'
+import Icon from '@/components/icons'
+import { useAppDispatch } from '@/store/hooks'
+import { deletePost } from '@/store/postsSlice'
+import { Button, Card } from 'antd'
 import { MessageCircleMore, User } from 'lucide-react'
 import moment from 'moment'
 import Image from 'next/image'
@@ -10,8 +13,14 @@ interface HorizontalCardProps {
 }
 
 const HorizontalCard: React.FC<HorizontalCardProps> = ({ data }) => {
+    const dispatch = useAppDispatch();
+
+    const handleDeletePost = (postId: string) => {
+        dispatch(deletePost(postId));
+    };
+
     return (
-        <Card hoverable size='small' className='h-full'>
+        <Card hoverable size='small' className='h-full group relative overflow-hidden'>
             <div
                 className="flex items-center justify-start gap-4"
             >
@@ -42,6 +51,17 @@ const HorizontalCard: React.FC<HorizontalCardProps> = ({ data }) => {
                         </span>
                     </div>
                 </div>
+            </div>
+
+            <div className="h-full w-1/3 p-4 absolute -left-full bottom-0 group-hover:left-0 bg-gray-500 bg-opacity-10 backdrop-blur-sm transition-500ms duration-500 delay-500 ease-in-out rounded-l-lg flex items-center justify-center">
+                <Button
+                    danger
+                    size='middle'
+                    type='primary'
+                    onClick={() => handleDeletePost(data?.id)}
+                >
+                    <Icon name='trash' size={16} />
+                </Button>
             </div>
         </Card >
     )

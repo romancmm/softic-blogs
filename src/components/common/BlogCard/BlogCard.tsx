@@ -1,4 +1,5 @@
 'use client'
+import Icon from '@/components/icons'
 import { deletePost } from '@/store/postsSlice'
 import { Avatar, Button, Card } from 'antd'
 import { MessageCircleMore } from 'lucide-react'
@@ -45,11 +46,17 @@ const BlogCard: React.FC<BlogCardProps> = ({ data }) => {
                     </Link>
                     <p className='font-normal text-sm text-gray-600 leading-relaxed capitalize line-clamp-4'>{data?.body}</p>
                 </div>
-
-
             </div>
-            <div className="h-1/3 p-4 w-full absolute left-0 -bottom-full group-hover:bottom-4 bg-white bg-opacity-5 backdrop-blur-sm transition-500ms duration-500 delay-500 ease-in-out rounded-b-lg flex items-center justify-center">
-                <Button onClick={() => handleDeletePost(data?.id)} danger size='large' type='primary'>Delete</Button>
+
+            <div className="min-h-1/4 p-8 w-full absolute left-0 -bottom-full group-hover:bottom-0 bg-gray-500 bg-opacity-10 backdrop-blur-sm transition-500ms duration-500 delay-500 ease-in-out rounded-b-lg flex items-center justify-center">
+                <Button
+                    danger
+                    size='middle'
+                    type='primary'
+                    onClick={() => handleDeletePost(data?.id)}
+                >
+                    <Icon name='trash' size={20} />
+                </Button>
             </div>
         </Card >
     )
