@@ -5,12 +5,14 @@ import Link from "next/link"
 import { Button } from '@/components/ui/button'
 import { Drawer, Menu } from 'antd'
 import { Menu as MenuIcon } from 'lucide-react'
+import { usePathname } from "next/navigation"
 
 interface MobileMenuProps {
     items: any[]
 }
 
 export default function MobileMenu({ items }: MobileMenuProps) {
+    const pathname = usePathname()
     const [open, setOpen] = React.useState(false);
 
     const showDrawer = () => {
@@ -20,6 +22,11 @@ export default function MobileMenu({ items }: MobileMenuProps) {
     const onClose = () => {
         setOpen(false);
     };
+
+    React.useEffect(() => {
+        onClose()
+    }, [pathname])
+
     return (
         <>
             <Button variant={"ghost"} onClick={showDrawer}>
